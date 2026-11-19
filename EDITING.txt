@@ -1,0 +1,34 @@
+서광일보 수정 안내
+
+articles.js에서 각 인물의 기사, 인터뷰, 과거, 날짜, 활동 이력을 수정합니다.
+핑크: 공연 동아리 / 골드: 배구 선수·주장 / 그린: 정원 봉사 / 블루: 사진 기록 / 블랙: 행사 운영 보조
+골드의 배구 경력 외의 내용은 임시 설정입니다. 공개 기사에는 내부 비밀을 직접 노출하지 않았습니다.
+
+이미지: images.js에서 각 인물의 article(기사 사진), portrait(인물 사진)에 외부 이미지 직접 HTTPS URL을 넣으세요.
+예: gold: {article:'https://your-domain.com/gold.gif', portrait:'https://your-domain.com/gold.png'}
+비율과 contain/cover 설정은 articles.js에서 변경합니다.
+숨은 대화 프로필도 images.js의 COPY_IMAGES에서 변경 가능하며 빈 값이면 기존 실루엣입니다.
+landscape = 1216×832 / portrait = 832×1216 / square = 1024×1024
+ratio:'auto'는 원본 이미지 비율을 자동 적용합니다.
+fit:'contain'은 사진 전체를 보존하며 남는 부분은 회색입니다.
+fit:'cover'는 칸을 가득 채우고 넘치는 부분을 잘라냅니다.
+빈 경로나 로딩 실패는 회색 배경으로 표시됩니다.
+관련 기사 썸네일은 인물 사진을 재사용하여 정사각형으로 표시합니다.
+
+index.html: 제호, 특집 소개, 하단 소개
+style.css: 전체 배경과 디자인
+app.js: 탭 전환 및 이미지 배치 동작
+
+블루의 숨은 대화 사본
+블루 탭 인물 기록의 BLUE를 더블클릭하면 같은 자리에 입력란이 생깁니다.
+BLIND 입력 후 Enter로 record-copy.html에 이동합니다(영문 대소문자 무관).
+Esc 또는 바깥 클릭은 취소합니다. 다른 인물에는 적용되지 않습니다.
+hidden-entry.js: 입력 기믹
+record-copy-data.js: 관리자 AD-000 / 연구원 RE-001 대화 및 날짜
+record-copy.html, record-copy.css, record-copy.js: 어두운 대화 사본 화면
+연구원 접근 코드는 기존 직원 포털과 같은 RECORD01입니다.
+이 사본은 창작용 정적 콘텐츠로, 실제 비밀자료를 보호하는 인증 기능이 아닙니다.
+
+GIF / animated WebP / PNG / JPG 지원. GIF는 움직임을 유지합니다.
+공유 페이지 주소가 아닌 이미지 파일 주소를 사용하세요. 외부 표시를 허용하는 이미지 호스트가 필요합니다.
+기본 contain 자동 맞춤과 기존 이미지 비율, 기믹은 유지했습니다.
